@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+	<rosparam command="load" file="$(find omnidirectional_four-wheeled_robot)/config/omnidirectional_four-wheeled_robot.yaml"/>
+	<arg name="model" default='$(find omnidirectional_four-wheeled_robot)/urdf/omnidirectional_four-wheeled_robot.urdf'/>
+	<arg name="gui" default="False" />
+
+	<param name="robot_description" textfile="$(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model omnidirectional_four-wheeled_robot" />
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find omnidirectional_four-wheeled_robot)/omnidirectional_four-wheeled_robot.rviz" required="true" />
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="/omnidirectional_four-wheeled_robot/rightFrontWheel_controller1 rightFrontWheel_controller2 rightBackWheel_controller1 rightBackWheel_controller2 leftFrontWheel_controller1 leftFrontWheel_controller2 leftBackWheel_controller1 leftBackWheel_controller2"/>
+
+</launch>

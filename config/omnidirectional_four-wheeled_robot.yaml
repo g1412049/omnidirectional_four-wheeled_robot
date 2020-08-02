@@ -1,0 +1,58 @@
+omnidirectional_four-wheeled_robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  rightFrontWheel_controller1:
+    type: effort_controllers/JointVelocityController 
+    joint: rightFrontWheel_joint1
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  rightFrontWheel_controller2:
+    type: effort_controllers/JointVelocityController 
+    joint: rightFrontWheel_joint2
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  rightBackWheel_controller1:
+    type: effort_controllers/JointVelocityController
+    joint: rightBackWheel_joint1
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  rightBackWheel_controller2:
+    type: effort_controllers/JointVelocityController
+    joint: rightBackWheel_joint2
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  leftFrontWheel_controller1:
+    type: effort_controllers/JointVelocityController 
+    joint: leftFrontWheel_joint1
+    pid: {p: 100.0, i: 0.01, d: 0.0}    
+  leftFrontWheel_controller2:
+    type: effort_controllers/JointVelocityController 
+    joint: leftFrontWheel_joint2
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  leftBackWheel_controller1:
+    type: effort_controllers/JointVelocityController
+    joint: leftBackWheel_joint1
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  leftBackWheel_controller2:
+    type: effort_controllers/JointVelocityController
+    joint: leftBackWheel_joint2
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+
+  gazebo_ros_control:
+    pid_gains:
+      rightFrontWheel_joint1:
+        {p: 100.0, i: 0.01, d: 10.0}
+      rightFrontWheel_joint2:
+        {p: 100.0, i: 0.01, d: 10.0}
+      rightBackWheel_joint1:
+        {p: 100.0, i: 0.01, d: 10.0}
+      rightBackWheel_joint2:
+        {p: 100.0, i: 0.01, d: 10.0}
+      leftFrontWheel_joint1:
+        {p: 100.0, i: 0.01, d: 10.0}
+      leftFrontWheel_joint2:
+        {p: 100.0, i: 0.01, d: 10.0}
+      leftBackWheel_joint1:
+        {p: 100.0, i: 0.01, d: 10.0}
+      leftBackWheel_joint2:
+        {p: 100.0, i: 0.01, d: 10.0}
