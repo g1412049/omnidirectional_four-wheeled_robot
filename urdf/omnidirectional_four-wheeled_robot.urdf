@@ -26,7 +26,7 @@
 		</inertial>
 	</link>
 
-	<link name="rightFrontWheel_link1">
+	<link name="FRwheel_link1">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -49,7 +49,7 @@
 		</inertial>
 	</link>
 
-	<link name="rightFrontWheel_link2">
+	<link name="FRwheel_link2">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -72,7 +72,7 @@
 		</inertial>
 	</link>
 
-	<link name="leftFrontWheel_link1">
+	<link name="FLwheel_link1">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -94,7 +94,7 @@
 					  izz="0.0083333333"/>
 		</inertial>
 	</link>
-	<link name="leftFrontWheel_link2">
+	<link name="FLwheel_link2">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -117,7 +117,7 @@
 		</inertial>
 	</link>
 
-	<link name="rightBackWheel_link1">
+	<link name="RRwheel_link1">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -139,7 +139,7 @@
 					  izz="0.0083333333"/>
 		</inertial>
 	</link>
-	<link name="rightBackWheel_link2">
+	<link name="RRwheel_link2">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -162,7 +162,7 @@
 		</inertial>
 	</link>
 
-	<link name="leftBackWheel_link1">
+	<link name="RLwheel_link1">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -184,7 +184,7 @@
 					  izz="0.0083333333"/>
 		</inertial>
 	</link>
-	<link name="leftBackWheel_link2">
+	<link name="RLwheel_link2">
 		<visual>
 			<geometry>
 				<cylinder radius="0.2" length="0.1"/>
@@ -216,181 +216,184 @@
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
- 	<joint name="rightFrontWheel_joint1" type="revolute">
+ 	<joint name="FRwheel_joint1" type="revolute">
  		<limit lower="-1.57" upper="1.57" effort="1." velocity="5."/>
 		<origin xyz="0.375 0.375 0." rpy="-1.57 0. 0."/>
 		<axis xyz="0. 1. 0."/>
 		<parent link="body_link"/>
-		<child link="rightFrontWheel_link1"/>
+		<child link="FRwheel_link1"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
- 	<joint name="rightFrontWheel_joint2" type="continuous">
+ 	<joint name="FRwheel_joint2" type="continuous">
 		<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
 		<axis xyz="0. 0. 1."/>
-		<parent link="rightFrontWheel_link1"/>
-		<child link="rightFrontWheel_link2"/>
+		<parent link="FRwheel_link1"/>
+		<child link="FRwheel_link2"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
-  	<joint name="leftFrontWheel_joint1" type="revolute">
+  	<joint name="FLwheel_joint1" type="revolute">
   		<limit lower="-1.57" upper="1.57" effort="1." velocity="5."/>
 		<origin xyz="0.375 -0.375 0." rpy="-1.57 0. 0."/>
 		<axis xyz="0. 1. 0."/>
 		<parent link="body_link"/>
-		<child link="leftFrontWheel_link1"/>
+		<child link="FLwheel_link1"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
-  	<joint name="leftFrontWheel_joint2" type="continuous">
+  	<joint name="FLwheel_joint2" type="continuous">
 		<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
 		<axis xyz="0. 0. 1."/>
-		<parent link="leftFrontWheel_link1"/>
-		<child link="leftFrontWheel_link2"/>
+		<parent link="FLwheel_link1"/>
+		<child link="FLwheel_link2"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
- 	<joint name="rightBackWheel_joint1" type="revolute">
+ 	<joint name="RRwheel_joint1" type="revolute">
  		<limit lower="-1.57" upper="1.57" effort="1." velocity="5."/>
 		<origin xyz="-0.375 0.375 0." rpy="-1.57 0. 0."/>
 		<axis xyz="0. 1. 0."/>
 		<parent link="body_link"/>
-		<child link="rightBackWheel_link1"/>
+		<child link="RRwheel_link1"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
- 	<joint name="rightBackWheel_joint2" type="continuous">
+ 	<joint name="RRwheel_joint2" type="continuous">
 		<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
 		<axis xyz="0. 0. 1."/>
-		<parent link="rightBackWheel_link1"/>
-		<child link="rightBackWheel_link2"/>
+		<parent link="RRwheel_link1"/>
+		<child link="RRwheel_link2"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
-  	<joint name="leftBackWheel_joint1" type="revolute">
+  	<joint name="RLwheel_joint1" type="revolute">
   		<limit lower="-1.57" upper="1.57" effort="1." velocity="5."/>
 		<origin xyz="-0.375 -0.375 0." rpy="-1.57 0. 0."/>
 		<axis xyz="0. 1. 0."/>
 		<parent link="body_link"/>
-		<child link="leftBackWheel_link1"/>
+		<child link="RLwheel_link1"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
-   	<joint name="leftBackWheel_joint2" type="continuous">
+   	<joint name="RLwheel_joint2" type="continuous">
 		<origin xyz="0. 0. 0." rpy="0. 0. 0."/>
 		<axis xyz="0. 0. 1."/>
-		<parent link="leftBackWheel_link1"/>
-		<child link="leftBackWheel_link2"/>
+		<parent link="RLwheel_link1"/>
+		<child link="RLwheel_link2"/>
 
 		<calibration rising="0."/>
 		<dynamics damping="0." friction="0."/>
 	 </joint>
 
- 	<transmission name="rightFrontWheel_trans1">
+ 	<transmission name="FRwheel_trans1">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="rightFrontWheel_joint1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="FRwheel_joint1">
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="rightFrontWheel_motor1">
+		<actuator name="FRwheel_motor1">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>
 
-	<transmission name="rightBackWheel_trans1">
+	<transmission name="RRwheel_trans1">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="rightBackWheel_joint1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="RRwheel_joint1">
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="rightBackWheel_motor1">
+		<actuator name="RRwheel_motor1">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>
 
-	<transmission name="leftFrontWheel_trans1">
+	<transmission name="FLwheel_trans1">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="leftFrontWheel_joint1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="FLwheel_joint1">
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="leftFrontWheel_motor1">
+		<actuator name="FLwheel_motor1">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>	
 
-	<transmission name="leftBackWheel_trans1">
+	<transmission name="RLwheel_trans1">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="leftBackWheel_joint1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="RLwheel_joint1">
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="leftBackWheel_motor1">
+		<actuator name="RLwheel_motor1">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>
 
-	<transmission name="rightFrontWheel_trans2">
+	<transmission name="FRwheel_trans2">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="rightFrontWheel_joint2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="FRwheel_joint2">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="rightFrontWheel_motor2">
+		<actuator name="FRwheel_motor2">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>
 
-	<transmission name="rightBackWheel_trans2">
+	<transmission name="RRwheel_trans2">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="rightBackWheel_joint2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="RRwheel_joint2">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="rightBackWheel_motor2">
+		<actuator name="RRwheel_motor2">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>
 
-	<transmission name="leftFrontWheel_trans2">
+	<transmission name="FLwheel_trans2">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="leftFrontWheel_joint2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="FLwheel_joint2">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="leftFrontWheel_motor2">
+		<actuator name="FLwheel_motor2">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</actuator>
 	</transmission>	
 
-	<transmission name="leftBackWheel_trans2">
+	<transmission name="RLwheel_trans2">
 		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="leftBackWheel_joint2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		<joint name="RLwheel_joint2">
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</joint>
-		<actuator name="leftBackWheel_motor2">
+		<actuator name="RLwheel_motor2">
 			<mechanicalReduction>1</mechanicalReduction>
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 		</actuator>
 	</transmission> 
 	
 	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-			<robotNamespace>/omnidirectional_four-wheeled_robot</robotNamespace>
+			<controlPeriod>0.001</controlPeriod>
+			<legacyModeNS>true</legacyModeNS>
+			<robotParam>/robot_description</robotParam>
+			<robotNamespace>/omnidirectional_four_wheeled_robot</robotNamespace>
 			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
 		</plugin>
 	</gazebo>
@@ -401,52 +404,51 @@
 		<mu2 value="0.05" />
 	</gazebo>
 
-	<gazebo reference="leftBackWheel_link1">
+	<gazebo reference="FRwheel_link1">
 		<selfCollide>false</selfCollide>
 		<mu1 value="0.05" />
 		<mu2 value="0.05" />
 	</gazebo>
 
-	<gazebo reference="leftBackWheel_link2">
+	<gazebo reference="FRwheel_link2">
 		<selfCollide>false</selfCollide>
 		<mu1 value="0.8" />
 		<mu2 value="0.8" />
 	</gazebo>
 
-	<gazebo reference="leftBackWheel_link1">
+	<gazebo reference="RRwheel_link1">
 		<selfCollide>false</selfCollide>
 		<mu1 value="0.05" />
 		<mu2 value="0.05" />
 	</gazebo>
 
-	<gazebo reference="leftBackWheel_link2">
+	<gazebo reference="RRwheel_link2">
 		<selfCollide>false</selfCollide>
 		<mu1 value="0.8" />
 		<mu2 value="0.8" />
 	</gazebo>
 
-	<gazebo reference="leftFrontWheel_link1">
+	<gazebo reference="FLwheel_link1">
 		<selfCollide>false</selfCollide>
 		<mu1 value="0.05" />
 		<mu2 value="0.05" />
 	</gazebo>
 
-	<gazebo reference="leftFrontWheel_link2">
-		<selfCollide>false</selfCollide>
-		<mu1 value="0.8" />
-		<mu2 value="0.8" />
-	</gazebo>
-
-	<gazebo reference="leftFrontWheel_link1">
-		<selfCollide>false</selfCollide>
-		<mu1 value="0.05" />
-		<mu2 value="0.05" />
-	</gazebo>
-
-	<gazebo reference="leftFrontWheel_link2">
+	<gazebo reference="FLwheel_link2">
 		<selfCollide>false</selfCollide>
 		<mu1 value="0.8" />
 		<mu2 value="0.8" />
 	</gazebo> 
 
+	<gazebo reference="RLwheel_link1">
+		<selfCollide>false</selfCollide>
+		<mu1 value="0.05" />
+		<mu2 value="0.05" />
+	</gazebo>
+
+	<gazebo reference="RLwheel_link2">
+		<selfCollide>false</selfCollide>
+		<mu1 value="0.8" />
+		<mu2 value="0.8" />
+	</gazebo>
 </robot>

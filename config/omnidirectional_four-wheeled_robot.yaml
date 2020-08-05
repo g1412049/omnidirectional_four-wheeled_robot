@@ -1,4 +1,4 @@
-omnidirectional_four-wheeled_robot:
+omnidirectional_four_wheeled_robot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
@@ -6,53 +6,44 @@ omnidirectional_four-wheeled_robot:
 
   # Position Controllers ---------------------------------------
   rightFrontWheel_controller1:
-    type: effort_controllers/JointVelocityController 
-    joint: rightFrontWheel_joint1
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: position_controllers/JointPositionController
+    joint: FRwheel_joint1
+    pid: {p: 100., i: 0.01, d: 10.}
   rightFrontWheel_controller2:
-    type: effort_controllers/JointVelocityController 
-    joint: rightFrontWheel_joint2
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: velocity_controllers/JointVelocityController   
+    joint: FRwheel_joint2
+    pid: {p: 100., i: 0.01, d: 10.}
   rightBackWheel_controller1:
-    type: effort_controllers/JointVelocityController
-    joint: rightBackWheel_joint1
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: position_controllers/JointPositionController
+    joint: RRwheel_joint1
+    pid: {p: 100., i: 0.01, d: 10.}
   rightBackWheel_controller2:
-    type: effort_controllers/JointVelocityController
-    joint: rightBackWheel_joint2
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: velocity_controllers/JointVelocityController 
+    joint: RRwheel_joint2
+    pid: {p: 100., i: 0.01, d: 10.}
   leftFrontWheel_controller1:
-    type: effort_controllers/JointVelocityController 
-    joint: leftFrontWheel_joint1
-    pid: {p: 100.0, i: 0.01, d: 0.0}    
+    type: position_controllers/JointPositionController
+    joint: FLwheel_joint1
+    pid: {p: 100., i: 0.01, d: 10.}    
   leftFrontWheel_controller2:
-    type: effort_controllers/JointVelocityController 
-    joint: leftFrontWheel_joint2
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: velocity_controllers/JointVelocityController 
+    joint: FLwheel_joint2
+    pid: {p: 100., i: 0.01, d: 10.}
   leftBackWheel_controller1:
-    type: effort_controllers/JointVelocityController
-    joint: leftBackWheel_joint1
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: position_controllers/JointPositionController
+    joint: RLwheel_joint1
+    pid: {p: 100., i: 0.01, d: 10.}
   leftBackWheel_controller2:
-    type: effort_controllers/JointVelocityController
-    joint: leftBackWheel_joint2
-    pid: {p: 100.0, i: 0.01, d: 0.0}
+    type: velocity_controllers/JointVelocityController 
+    joint: RLwheel_joint2
+    pid: {p: 100., i: 0.01, d: 10.}
 
-  gazebo_ros_control:
-    pid_gains:
-      rightFrontWheel_joint1:
-        {p: 100.0, i: 0.01, d: 10.0}
-      rightFrontWheel_joint2:
-        {p: 100.0, i: 0.01, d: 10.0}
-      rightBackWheel_joint1:
-        {p: 100.0, i: 0.01, d: 10.0}
-      rightBackWheel_joint2:
-        {p: 100.0, i: 0.01, d: 10.0}
-      leftFrontWheel_joint1:
-        {p: 100.0, i: 0.01, d: 10.0}
-      leftFrontWheel_joint2:
-        {p: 100.0, i: 0.01, d: 10.0}
-      leftBackWheel_joint1:
-        {p: 100.0, i: 0.01, d: 10.0}
-      leftBackWheel_joint2:
-        {p: 100.0, i: 0.01, d: 10.0}
+  gazebo_ros_control/pid_gains:
+      FRwheel_joint1/p: 1.
+      FRwheel_joint2/p: 1.
+      RRwheel_joint1/p: 1.
+      RRwheel_joint2/p: 1.
+      FLwheel_joint1/p: 1.
+      FLwheel_joint2/p: 1.
+      RLwheel_joint1/p: 1.
+      RLwheel_joint2/p: 1.
