@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!-- =================================================================================== -->
-<!-- |    ommidirecctional_four-wheeled_robot.urdf.xacro							| -->
-<!-- |    author: Koji Shibata                               							| -->
-<!-- |    e-mail: kshibata.0519@gmail.com											| -->
-<!-- |    This is a URDF file that describes an omnidirectional 					| -->
-<!-- |    four-wheeled robot for ROS users.											| -->
+<!-- |    ommidirecctional_four-wheeled_robot.urdf.xacro				| -->
+<!-- |    author: Koji Shibata                               				| -->
+<!-- |    e-mail: kshibata.0519@gmail.com						| -->
+<!-- |    This is a URDF file that describes an omnidirectional 			| -->
+<!-- |    four-wheeled robot for ROS users.						| -->
 <!-- =================================================================================== -->
 <robot name="omnidirectional_four-wheeled_robot" xmlns:xacro="http://ros.org/wiki/xacro">
 <xacro:property name="pi" value="3.1415926535897931"/>
