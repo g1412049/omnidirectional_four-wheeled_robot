@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="model" default='$(find omnidirectional_four-wheeled_robot)/urdf/omnidirectional_four-wheeled_robot.urdf'/>
+	<arg name="model" default='$(find omnidirectional_four-wheeled_robot)/urdf/omnidirectional_four-wheeled_robot.urdf.xacro'/>
 	<arg name="gui" default="False" />
 
-	<param name="robot_description" textfile="$(arg model)"/>
+	<param name="robot_description" command="xacro $(arg model)"/>
 	<param name="use_gui" value="$(arg gui)"/>
 	<rosparam 
 		command="load" 
 		file="$(find omnidirectional_four-wheeled_robot)/config/omnidirectional_four-wheeled_robot.yaml"
 	/>
-	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
 	<node 
 		name="joint_state_publisher" 
 		pkg="joint_state_publisher_gui" 
