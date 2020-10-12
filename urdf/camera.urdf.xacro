@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<!-- =================================================================================== -->
-<!-- |    camera.urdf.xacro																| -->
-<!-- |    author: Koji Shibata															| -->
-<!-- |    e-mail: kshibata.0519@gmail.com　												| -->
-<!-- |    This is a URDF file that describes an omnidirectional 						| -->
-<!-- |    four-wheeled robot for ROS users. 											| -->
-<!-- =================================================================================== -->
+<!-- ===========================================================================  -->
+<!-- |    camera.urdf.xacro																											| -->
+<!-- |    author: Koji Shibata                               										| -->
+<!-- |    e-mail: kshibata.0519@gmail.com																				| -->
+<!-- |    This is a URDF file that describes an omnidirectional 								| -->
+<!-- |    four-wheeled robot for ROS users.																			| -->
+<!-- ===========================================================================  -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:macro name="camera_macro" params="parent prefix xyz">
 	<link name="${prefix}_link"/>
-	
+
 	<joint name="${prefix}_joint" type="fixed">
 	  <parent link="${parent}"/>
 	  <child  link="${prefix}_link"/>
@@ -56,5 +56,5 @@
 
 	  </sensor>
 	</gazebo>
-  </xacro:macro> 
+  </xacro:macro>
 </robot>

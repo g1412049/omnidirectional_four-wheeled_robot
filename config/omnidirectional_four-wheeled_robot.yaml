@@ -2,7 +2,7 @@ omnidirectional_four_wheeled_robot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
-    publish_rate: 50  
+    publish_rate: 50
 
   # Position Controllers ---------------------------------------
   FR_delta:
@@ -10,7 +10,7 @@ omnidirectional_four_wheeled_robot:
     joint: FRwheel_joint1
     pid: {p: 10., i: 0.01, d: 1.}
   FR_omega:
-    type: velocity_controllers/JointVelocityController   
+    type: velocity_controllers/JointVelocityController
     joint: FRwheel_joint2
     pid: {p: 10., i: 0.01, d: 1.}
   RR_delta:
@@ -18,15 +18,15 @@ omnidirectional_four_wheeled_robot:
     joint: RRwheel_joint1
     pid: {p: 10., i: 0.01, d: 1.}
   RR_omega:
-    type: velocity_controllers/JointVelocityController 
+    type: velocity_controllers/JointVelocityController
     joint: RRwheel_joint2
     pid: {p: 10., i: 0.01, d: 1.}
   FL_delta:
     type: position_controllers/JointPositionController
     joint: FLwheel_joint1
-    pid: {p: 10., i: 0.01, d: 1.}    
+    pid: {p: 10., i: 0.01, d: 1.}
   FL_omega:
-    type: velocity_controllers/JointVelocityController 
+    type: velocity_controllers/JointVelocityController
     joint: FLwheel_joint2
     pid: {p: 10., i: 0.01, d: 1.}
   RL_delta:
@@ -34,17 +34,17 @@ omnidirectional_four_wheeled_robot:
     joint: RLwheel_joint1
     pid: {p: 10., i: 0.01, d: 1.}
   RL_omega:
-    type: velocity_controllers/JointVelocityController 
+    type: velocity_controllers/JointVelocityController
     joint: RLwheel_joint2
     pid: {p: 10., i: 0.01, d: 1.}
 
   # Gazebo ros Controllers ---------------------------------------
   gazebo_ros_control/pid_gains:
-      FRwheel_joint1/p: 1.
-      FRwheel_joint2/p: 1.
-      RRwheel_joint1/p: 1.
-      RRwheel_joint2/p: 1.
-      FLwheel_joint1/p: 1.
-      FLwheel_joint2/p: 1.
-      RLwheel_joint1/p: 1.
-      RLwheel_joint2/p: 1.
+      FRwheel_joint1/p: 5.
+      FRwheel_joint2/p: 5.
+      RRwheel_joint1/p: 5.
+      RRwheel_joint2/p: 5.
+      FLwheel_joint1/p: 5.
+      FLwheel_joint2/p: 5.
+      RLwheel_joint1/p: 5.
+      RLwheel_joint2/p: 5.

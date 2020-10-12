@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<!-- =================================================================================== -->
-<!-- |    laser.urdf.xacro															| -->
-<!-- |    author: Koji Shibata														| -->
-<!-- |    e-mail: kshibata.0519@gmail.com　											| -->
-<!-- |    This is a URDF file that describes an omnidirectional 					| -->
-<!-- |    four-wheeled robot for ROS users. 										| -->
-<!-- =================================================================================== -->
+<!-- ===========================================================================  -->
+<!-- |    laser.urdf.xacro																											| -->
+<!-- |    author: Koji Shibata                               										| -->
+<!-- |    e-mail: kshibata.0519@gmail.com																				| -->
+<!-- |    This is a URDF file that describes an omnidirectional 								| -->
+<!-- |    four-wheeled robot for ROS users.																			| -->
+<!-- ===========================================================================  -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:macro name="laser_macro" params="parent prefix xyz rpy">
 		<link name="${prefix}_link">
